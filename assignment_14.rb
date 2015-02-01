@@ -8,7 +8,7 @@ class PigLatin
       pigatized_text = passed_text + "way"
     else
       # Takes first letter, moves it to the end, and adds "ay"
-      pigatized_text = passed_text.slice(1..-1) + "ah" + passed_text.slice(0)
+      pigatized_text = passed_text.slice(1..-1) + passed_text.slice(0) + "ah"
     end
 
     return pigatized_text
