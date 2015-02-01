@@ -48,3 +48,6 @@ puts match_sits[1]
   end
   puts sits_string
 =end
+
+#even another way to replace last but deletes period
+    #sits_matches = sits_string.gsub!(/sits.$/, "test")
