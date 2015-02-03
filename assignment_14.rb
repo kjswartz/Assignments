@@ -14,7 +14,7 @@ class PigLatin
       else
         # Takes first letter, moves it to the end, and adds "ay"
         # and pushes word into piglation array
-        piglatin << word.slice(1..-1) + word.slice(0) + "ah"
+        piglatin << word.slice(1..-1) + word.slice(0) + "ay"
       end
     end
     # calls up the array holding all the pigatized words and joins them with a space
