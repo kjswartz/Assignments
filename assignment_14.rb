@@ -3,15 +3,22 @@ class PigLatin
   VOWELS =  %w(a e i o u)
 
   def self.pigatize(passed_text)
-    # Check to see if the first letter is a vowel, if not it's a consonant
-    if PigLatin.starts_with_vowel(passed_text[0])
-      pigatized_text = passed_text + "way"
-    else
-      # Takes first letter, moves it to the end, and adds "ay"
-      pigatized_text = passed_text.slice(1..-1) + passed_text.slice(0) + "ah"
+    # creates array to house individual pigatized words
+    piglatin = []
+    # splits the user text into an array of individual words to itterate over
+    passed_text.split.each do |word|
+    # Check to see if the first letter of a word is a vowel, if not it's a consonant
+      if PigLatin.starts_with_vowel(word[0])
+        # pushes the pigatized word into piglatin array
+        piglatin << word + "way"
+      else
+        # Takes first letter, moves it to the end, and adds "ay"
+        # and pushes word into piglation array
+        piglatin << word.slice(1..-1) + word.slice(0) + "ah"
+      end
     end
-
-    return pigatized_text
+    # calls up the array holding all the pigatized words and joins them with a space
+    return piglatin.join(' ')
   end
 
   # Check to see if the first letter is a vowel
