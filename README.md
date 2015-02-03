@@ -69,3 +69,22 @@ Assignment 14<br>
 Using the structure of a class as I've laid out in this gist, finishing creating the PigLatin class to translate a word into pig latin
 Bonus: modify the app to convert an entire phrase (one word at a time)
 Note the pig latin rules in the comment of the skeleton app
+
+Assignment 15<br>
+Copy and then modify assignment 12 to read the questions from a file instead of the hard coded array
+Load them into an array so the rest of the program can remain the same
+If your assignment 12 is coded correctly, you won't have to change the part that asks questions
+Can be done with two lines of code
+Remember to have the text file of questions in the same directory where your Ruby code is
+
+Assignment 16<br>
+Pick a screenplay from this list, http://www.simplyscripts.com/ (in text)
+Read in the screenplay and write it to a local file
+
+Assignment 17<br>
+Read about HTTP
+Read review on using JSON in Ruby
+Look thru some JSON Examples
+Copy assignment 15 and modify to now read in questions from a JSON file
+This means you need to create a JSON file of you questions
+Read and parse the JSON into an array so the rest of the app remains the same
