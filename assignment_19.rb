@@ -8,9 +8,9 @@ class String
     # creates array to house individual pigatized words
     piglatin = []
     # splits the user text into an array of individual words to itterate over
-    self.downcase.split.each do |word|
+    downcase.split.each do |word|
     # Check to see if the first letter of a word is a vowel, if not it's a consonant
-      if self.starts_with_vowel(word[0])
+      if starts_with_vowel(word[0])
         # pushes the pigatized word into piglatin array
         piglatin << word + "way"
       else
