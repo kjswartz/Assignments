@@ -18,9 +18,8 @@ class Person
     @last_name = user_name.split[1]
   end
 
-  # take the user inputed birthday and store it in @age to call in private methode
-  def age=(user_bday)
-    @age = user_bday
+  # age method to call private calculateAge method
+  def age
     calculateAge
   end
 
@@ -28,11 +27,11 @@ class Person
   private
   def calculateAge
     # parses the user inputed birthdate inorder to subtract from current day
-    bday_parse = Date.parse(@age)
+    bday_parse = Date.parse(@birthdate)
     today = Date.today
     time_difference = (today - bday_parse)
     # translates time_difference into years and sets to integer to get rid of float
-    @birthdate = (time_difference/365.25).to_i
+    return (time_difference/365.25).to_i
   end
 
 end
@@ -49,10 +48,12 @@ loop do
   new_person.name = user_name
 
   puts "When is your birthdate (YYYY-MM-DD): "
-  new_person.age = gets.chomp
+  # sets user birthdate to @birthdate attribute
+  new_person.birthdate = gets.chomp
+
 
   puts "First Name: " + new_person.first_name
   puts "Last Name: " + new_person.last_name
-  puts "You are #{new_person.birthdate} years old!"
+  puts "You are #{new_person.age} years old!"
   puts "Person Count: #{Person.number_of_people}"
 end
