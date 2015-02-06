@@ -34,9 +34,10 @@ while invoice_loop == ""
   puts "\n"
 
   # output each item
-        # still working
+  line_item_array = non_zero_quantities.map { |item| item[:product_name] }
+  puts line_item_array.to_sentence
 
-  # calculate total cost
+  # calculate total cost. Calls on the key's value
   pre_tax_array = invoice.items.map { |pricing| pricing[:quantity] * pricing[:sale_price] }
   # i now have an array of the costs of each item.
   # adds up all the numbers within array
@@ -54,10 +55,3 @@ while invoice_loop == ""
   invoice_loop = gets.chomp
 
 end
-
-
-
-  # invoice.items << invoice_item.product_name
-  # invoice.items << invoice_item.sale_price
-  # invoice.items << invoice_item.quantity
-  # invoice.items << invoice_item.tax
