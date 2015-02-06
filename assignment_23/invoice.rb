@@ -14,32 +14,31 @@ attr_accessor :items
     @items = []
   end
 
-  # def add_item
-  #   @items
-  # end
-
-  def hash_iterator
-
-  end
-
-
+  # calculate total of all it's invoice items rejecting 0 quantities
   def total_items
-    #  Create an instance method in Invoice that will
-    #       calculate a total of all it's invoice items
-    @items.size
-
-
-
-    # reject invoice items that are zero
-    # @items.recject { |item| item == 0 }
+    @items.reject { |hash| hash[:quantity] == 0 }
   end
 
-  def number_of_items
-    @@item_counter
+  # output each item
+  def output_items
+    total_items.map { |item| item[:product_name] }.to_sentence
   end
 
+  # calculate total pre-tax cost.
+  def pre_tax_cost
+    # Calls on the key's value
+    total_items.map { |pricing| pricing[:quantity] * pricing[:sale_price] }
+    # I now have an array of the costs of each item.
+  end
 
+  # taxation
+  def tax_cost
+    total_items.map { |tax| tax[:quantity] * tax[:sale_price] * tax[:tax] }
+  end
 
-
+  # final total cost
+  def total_cost
+    pre_tax_cost + tax_cost
+  end
 
 end

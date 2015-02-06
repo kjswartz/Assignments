@@ -10,13 +10,13 @@ attr_accessor :product_name, :sale_price, :quantity, :tax
 
   def questions
 
-    print "product name: "
+    print "Product name: "
       @product_name = gets.chomp
-    print "sale price: "
+    print "Unit price: "
       @sale_price = gets.chomp.to_f
-    print "quantity: "
+    print "Quantity: "
       @quantity = gets.chomp.to_i
-    print "tax: "
+    print "Tax rate: "
       @tax = gets.chomp.to_f
 
   end
