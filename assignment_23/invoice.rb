@@ -12,19 +12,29 @@ attr_accessor :items
   def initialize
     # array of all items created from InvoiceItems class
     @items = []
-    @items << InvoiceItem.new
   end
 
   # def add_item
-  #   @items << InvoiceItem.new
+  #   @items
   # end
+
+  def hash_iterator
+
+  end
+
 
   def total_items
     #  Create an instance method in Invoice that will
     #       calculate a total of all it's invoice items
 
+
+
     # reject invoice items that are zero
     # @items.recject { |item| item == 0 }
+  end
+
+  def number_of_items
+    @@item_counter
   end
 
 

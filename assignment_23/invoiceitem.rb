@@ -8,28 +8,25 @@ attr_accessor :product_name, :sale_price, :quantity, :tax
   # then it should store that item into the Invoice items array
   def initialize
     @@item_counter += 1
+    questions
+  end
+
+  def questions
 
     print "product name: "
-      self.product_name = gets.chomp
+      @product_name = gets.chomp
     print "sale price: "
-      self.sale_price = gets.chomp
+      @sale_price = gets.chomp.to_f
     print "quantity: "
-      self.quantity = gets.chomp
+      @quantity = gets.chomp.to_i
     print "tax: "
-      self.tax = gets.chomp
-
-    #return {"name" => @product_name, "price" => @sale_price, "quantity" => @quantity, "taxt" => @tax}
-      #invoice_hash = Hash[product_name, ]
-
-  # store these values into a one hash (key, value) that will get
-      # pushed into Invoice class items array
+      @tax = gets.chomp.to_f
 
   end
 
   def self.number_of_items
     @@item_counter
   end
-
 
 
 
