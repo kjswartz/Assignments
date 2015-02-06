@@ -26,6 +26,7 @@ attr_accessor :items
   def total_items
     #  Create an instance method in Invoice that will
     #       calculate a total of all it's invoice items
+    @items.size
 
 
 

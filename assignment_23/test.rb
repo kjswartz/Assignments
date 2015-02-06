@@ -7,27 +7,30 @@ load 'invoiceitem.rb'
 print "Name your invoice: "
 invoice = gets.chomp
 invoice = Invoice.new
+invoice_loop = ""
 
-loop do
-  puts "Invoice Item: "
-  invoice_item = gets.chomp
+while invoice_loop == ""
   invoice_item = InvoiceItem.new
 
   item_hash = {product_name: invoice_item.product_name, sale_price: invoice_item.sale_price, quantity: invoice_item.quantity, tax: invoice_item.tax}
-    if item_hash[:quantity] == 0
-      item_hash = nil
-    else
-      invoice.items << item_hash
-    end
+
+  invoice.items << item_hash
+
+    # if item_hash[:quantity] == 0
+    #   item_hash = nil
+    # else
+    #   invoice.items << item_hash
+    # end
 
   puts invoice.items.size
   puts invoice.items.class
-  puts invoice.items[0]
+  puts invoice.items
+  # rejects hashes within array where quantity = 0
+  puts invoice.items.reject { |hash| hash[:quantity] == 0 }
 
 
-  print "Do you want to add another item? "
-  response = gets.chomp
-  break if response == 'n'
+  print 'Hit ENTER to add another Invoice Item, else enter "n": '
+  invoice_loop = gets.chomp
 end
 
 
