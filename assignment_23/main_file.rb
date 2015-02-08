@@ -4,13 +4,8 @@ include ActiveSupport::NumberHelper
 load 'invoice.rb'
 load 'invoiceitem.rb'
 
-# Then output each line item.
-# Show a sub-total without the tax, then a line item for the tax, then the total.
-# Bonus: make the invoice look like a real world invoice in the terminal
-print "Name your invoice: "
-invoice = gets.chomp
+# creates new invoice
 invoice = Invoice.new
-
 
 # loop to collect invoice items
 loop do
@@ -40,6 +35,7 @@ loop do
 end
 
 puts "\n"
+puts "Invoice for : #{invoice}"
 # calls invoice method depicting how many items w/out 0 quantity in invoice
 puts "Number of invoice items: #{invoice.total_items.size}"
 
