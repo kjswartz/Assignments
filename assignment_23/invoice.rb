@@ -21,7 +21,13 @@ attr_accessor :items
 
   # output each item
   def output_items
-    total_items.map { |item| item[:product_name] }.to_sentence
+    #total_items.map { |item| item[:product_name] }.to_sentence
+    array_of_hash_values = total_items.map {|hash| hash.values }
+    array_of_hash_values.each {|item| puts "Product: #{item[0]} | \
+    Unit Cost: #{item[1]} | \
+    Quantity: #{item[2]} | \
+    Tax rate: #{item[3]}"}
+
   end
 
   # calculate total pre-tax cost.
