@@ -7,7 +7,7 @@ class Company
 
   # displays current directory
   def list
-    @employees.map {|hash| hash.values }.each {|e| puts "ID: #{e[0]} | #{e[1]}, Location: #{e[2]}"}
+    @employees.each {|e| puts "ID: #{e.id} | #{e.name}, Location: #{e.city}"}
   end
 
   # Adds the passed employee to the company employee list
@@ -17,7 +17,7 @@ class Company
 
   # Removes the passed employee from the company employee list
   def fire_employee(passed_text)
-    @employees.delete_if { |hash| hash[:id] == passed_text }
+    @employees.delete_if { |e| e.id == passed_text.to_i }
   end
 
 end

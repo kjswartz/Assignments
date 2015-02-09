@@ -26,13 +26,9 @@ loop do
   print "Employee city: "
   employee.city = gets.chomp
   employee_id += 1
+  employee.id = employee_id
 
-  # stores employees into hash with key values
-  employee_hash = {
-      id: employee_id.to_s,
-      name: employee.name,
-      city: employee.city}
-  company.hire_employee(employee_hash)
+  company.hire_employee(employee)
 end
 
 # Display employees
@@ -61,12 +57,9 @@ loop do
         print "Employee city: "
         employee.city = gets.chomp
         employee_id += 1
+        employee.id = employee_id
 
-        employee_hash = {
-            id: employee_id.to_s,
-            name: employee.name,
-            city: employee.city}
-        company.hire_employee(employee_hash)
+        company.hire_employee(employee)
 
         # Display updated listing
         puts "\n"
@@ -99,7 +92,7 @@ loop do
 
 end
 
-# Displays finial Directoy 
+# Displays finial Directoy
 puts "\n"
 puts "#{company.name} Finalized Employee Directory"
 company.list
