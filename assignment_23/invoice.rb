@@ -16,19 +16,19 @@ attr_accessor :items
 
   # calculate total of all it's invoice items rejecting 0 quantities
   def total_items
-    @items.reject { |hash| hash[:quantity] == 0 }
+    @items.reject { |item| item.quantity == 0 }
   end
 
   # calculate total pre-tax cost.
   def pre_tax_cost
     # Calls on the key's value
-    total_items.map { |pricing| pricing[:quantity] * pricing[:sale_price] }
+    total_items.map { |price| price.quantity * price.sale_price }
     # I now have an array of the costs of each item.
   end
 
   # taxation
   def tax_cost
-    total_items.map { |tax| tax[:quantity] * tax[:sale_price] * tax[:tax] }
+    total_items.map { |tax| tax.quantity * tax.sale_price * tax.tax }
   end
 
   # final total cost

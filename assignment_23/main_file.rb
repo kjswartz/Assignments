@@ -7,8 +7,8 @@ load 'invoiceitem.rb'
 # creates new invoice
 invoice = Invoice.new
 
-#counter for invoice ID
-invoice_id = 0
+item_count = 0
+
 # loop to collect invoice items
 loop do
   invoice_item = InvoiceItem.new
@@ -24,31 +24,23 @@ loop do
     invoice_item.quantity = gets.chomp.to_i
   print "Tax rate: "
     invoice_item.tax = gets.chomp.to_f
-  invoice_id += 1
-
-  # stores items in a hash with key values
-  item_hash = {
-      product_name: invoice_item.product_name,
-      sale_price: invoice_item.sale_price,
-      quantity: invoice_item.quantity,
-      tax: invoice_item.tax,
-      id: invoice_id.to_i}
+  #creates tracking id number
+  item_count += 1
+  invoice_item.id = item_count
 
   # stores hashed inovice item into invoice array
-  invoice.items << item_hash
+  invoice.items << invoice_item
 end
 
 puts "\n"
 # calls invoice method depicting how many items w/out 0 quantity in invoice
 puts "Number of invoice items: #{invoice.total_items.size}"
 puts "\n"
-# displays product_names of user inputed (non-0) quantity invoice items
 
 # output each item
-invoice_output = invoice.total_items.map {|hash| hash.values }
-invoice_output.each do |item|
-  puts "Invoice Item ID: #{item[4]}"
-  puts "Product: #{item[0]} | Unit Cost: #{item[1]} | Quantity: #{item[2]} | Tax rate: #{item[3]}"
+invoice.total_items.each do |item|
+  puts "Invoice Item ID: #{item.id}"
+  puts "Product: #{item.product_name} | Unit Cost: #{item.sale_price} | Quantity: #{item.quantity} | Tax rate: #{item.tax}"
   puts "\n"
 end
 
