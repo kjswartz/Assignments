@@ -1,6 +1,7 @@
 load 'employee.rb'
 load 'company.rb'
 
+# creates new company class
 company = Company.new
 print "Company name: "
 company.name = gets.chomp
@@ -8,84 +9,97 @@ print "Company city: "
 company.city = gets.chomp
 
 puts "\n"
-puts "Please enter all of your employees. Press ENTER when all finished."
+puts "Input all of your employees. Press ENTER on name when all finished."
 
-# id counter
+# id counter to track employees
 employee_id = 0
 
 # loop to collect employees
 loop do
   employee = Employee.new
-  employee_id += 1
+  puts "\n"
 
+  # collects employee name, city, and ID
   print "Employee name: "
   employee.name = gets.chomp
   break if employee.name == ""
   print "Employee city: "
   employee.city = gets.chomp
+  employee_id += 1
 
   # stores employees into hash with key values
   employee_hash = {
-      id: employee_id,
+      id: employee_id.to_s,
       name: employee.name,
       city: employee.city}
-
-  # stores hash into employees array
-  company.employees << employee_hash
+  company.hire_employee(employee_hash)
 end
 
-puts "\n"
 # Display employees
-puts "#{company.name} Employees"
-company.list
 puts "\n"
+puts "#{company.name} Current Employee Directory"
+company.list
 
-
+# loop to hire and fire employees
 loop do
-puts 'Enter  "H to hire and "F" to fire employees: '
-response = gets.chomp.capitalize
-break if response == ""
+  puts "\n"
+  puts 'Press ENTER to finish or "H to hire and "F" to fire employees: '
+  response = gets.chomp.capitalize
+  break if response == ""
 
+  # case for Hire and Fire responses
   case
+    # Hiring employees
     when response == "H"
       loop do
-        #company.hire_employee
         employee = Employee.new
-        employee_id += 1
-
+        puts "\n"
+        puts "Enter new employees. Press ENTER on name when finished."
         print "Employee name: "
         employee.name = gets.chomp
         break if employee.name == ""
         print "Employee city: "
         employee.city = gets.chomp
+        employee_id += 1
 
         employee_hash = {
-            id: employee_id,
+            id: employee_id.to_s,
             name: employee.name,
             city: employee.city}
+        company.hire_employee(employee_hash)
 
-        company.employees << employee_hash
+        # Display updated listing
         puts "\n"
-        puts "Current Employee Directory"
+        puts "#{company.name} Current Employee Directory"
         company.list
       end
 
+    # firing employees
     when response == "F"
       loop do
-        print "Enter the ID of the employee to terminate: "
-        terminate_id = gets.chomp.to_i
-        company.fire_employee(terminate_id)
+        # Display current directoy with IDs
         puts "\n"
-        puts "Current Employee Directory"
+        puts "#{company.name} Current Employee Directory"
         company.list
-        print "Terminate more employees? (y/n): "
-        ter_res = gets.chomp.downcase
-        break if ter_res == "n"
+
+        puts "\n"
+        print "Press ENTER to exit or input ID of an employee to terminate: "
+        terminate_id = gets.chomp
+        break if terminate_id == ""
+
+        # removes employee from company employee array
+        company.fire_employee(terminate_id)
+
+        # Displays updated directory
+        puts "\n"
+        puts "#{company.name} Current Employee Directory"
+        company.list
       end
   end
-  
+
 end
 
+# Displays finial Directoy 
 puts "\n"
-puts "Current Employee Directory"
+puts "#{company.name} Finalized Employee Directory"
 company.list
