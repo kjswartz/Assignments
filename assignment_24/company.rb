@@ -11,13 +11,13 @@ class Company
   end
 
   # Adds the passed employee to the company employee list
-  def hire_employee(passed_text)
-    @employees << passed_text
+  def hire_employee(employee)
+    @employees << employee
   end
 
   # Removes the passed employee from the company employee list
-  def fire_employee(passed_text)
-    @employees.delete_if { |e| e.id == passed_text.to_i }
+  def fire_employee(employee_id)
+    @employees.delete_if { |e| e.id == employee_id.to_i }
   end
 
 end
