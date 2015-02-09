@@ -7,6 +7,8 @@ load 'invoiceitem.rb'
 # creates new invoice
 invoice = Invoice.new
 
+#counter for invoice ID
+invoice_id = 0
 # loop to collect invoice items
 loop do
   invoice_item = InvoiceItem.new
@@ -22,26 +24,33 @@ loop do
     invoice_item.quantity = gets.chomp.to_i
   print "Tax rate: "
     invoice_item.tax = gets.chomp.to_f
+  invoice_id += 1
 
   # stores items in a hash with key values
   item_hash = {
       product_name: invoice_item.product_name,
       sale_price: invoice_item.sale_price,
       quantity: invoice_item.quantity,
-      tax: invoice_item.tax}
+      tax: invoice_item.tax,
+      id: invoice_id.to_i}
 
   # stores hashed inovice item into invoice array
   invoice.items << item_hash
 end
 
 puts "\n"
-puts "Invoice for : #{invoice}"
 # calls invoice method depicting how many items w/out 0 quantity in invoice
 puts "Number of invoice items: #{invoice.total_items.size}"
-
-# displays product_names of user inputed (non-0) quantity invoice items
-invoice.output_items
 puts "\n"
+# displays product_names of user inputed (non-0) quantity invoice items
+
+# output each item
+invoice_output = invoice.total_items.map {|hash| hash.values }
+invoice_output.each do |item|
+  puts "Invoice Item ID: #{item[4]}"
+  puts "Product: #{item[0]} | Unit Cost: #{item[1]} | Quantity: #{item[2]} | Tax rate: #{item[3]}"
+  puts "\n"
+end
 
 # displays pre-tax total
 puts "Pre-tax cost: #{number_to_currency(invoice.pre_tax_cost.sum)}"
