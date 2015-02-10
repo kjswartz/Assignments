@@ -5,6 +5,11 @@ class Post
 
   def initialize
     @published_date = Date.current
+    @name = ''
+    while @name.length < 1
+      print 'Please name your post: '
+      @name = gets.chomp
+    end
   end
 
   def word_count

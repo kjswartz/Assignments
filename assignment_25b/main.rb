@@ -7,10 +7,9 @@ loop do
   blog_response = gets.chomp.downcase
   break if blog_response == "n"
 
-  print  'Please name your blog: '
-  blog_name = gets.chomp
+  # print  'Please name your blog: '
+  # blog_name = gets.chomp
   blog = Blog.new
-  blog.name = blog_name
   print 'Please enter a user_name: '
   blog.user_name = gets.chomp
 
@@ -19,11 +18,7 @@ loop do
       print 'Would you like to create a post (y/n): '
       post_response = gets.chomp.downcase
       break if post_response == "n"
-
-      print 'Please name your post: '
-      post_title = gets.chomp
       post = Post.new
-      post.name = post_title
       puts "Please enter your blog post: "
       blog_body = gets.chomp
       post.body = blog_body
