@@ -1,0 +1,33 @@
+header {
+    text-align: center;
+    background: url('http://i.imgur.com/1c5Y8nD.jpg');
+    background-size: cover;
+    color: white;
+    }
+h1 {
+   font-size: 70px;
+   }
+.posthead {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+  }
+img {
+    margin: 40px 0px 0px 0px;
+    border: 7px solid white;
+    border-radius: 200px;
+    }
+article {
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+        }
+body {
+    background: rgba(255,255,255,.5);
+     }
+div {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  text-align: center;
+}
