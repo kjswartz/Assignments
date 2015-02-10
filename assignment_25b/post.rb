@@ -7,7 +7,7 @@ class Post
     @published_date = Date.current
     @name = ''
     while @name.length < 1
-      print 'Please name your post: '
+      print 'Please enter a title for your post: '
       @name = gets.chomp
     end
   end
