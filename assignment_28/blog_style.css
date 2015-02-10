@@ -2,10 +2,18 @@ header {
     text-align: center;
     background: url('http://i.imgur.com/1c5Y8nD.jpg');
     background-size: cover;
-    color: white;
+    background-position: center;
+    color: black;
+    }
+.postheader {
+    text-align: center;
+    background: url('http://i.imgur.com/1Qgnlfn.jpg');
+    background-size: cover;
+    background-position: center;
     }
 h1 {
    font-size: 70px;
+   font-family: 'Londrina Shadow', cursive;
    }
 .posthead {
   font-size: 50px;
@@ -30,4 +38,8 @@ div {
   margin-right: 10px;
   padding: 20px;
   text-align: center;
+}
+.publish {
+  text-align: center;
+  font-family: cursive;
 }
