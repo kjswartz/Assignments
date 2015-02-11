@@ -25,18 +25,12 @@ loop do
   break if product_search == ""
   invoice_item = InvoiceItem.new
 
-  url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=relevance")
+  url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=price")
+  raw_json = Net::HTTP.get(url)
+  # returns movies array containing hash key values of supporting information
+  results = JSON.parse(raw_json)
 
-  # if a error occurs, sort=relevance is removed and code is rerun.
-  # begin
-    raw_json = Net::HTTP.get(url)
-    # returns movies array containing hash key values of supporting information
-    results = JSON.parse(raw_json)
-  # rescue
-  #   url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}")
-  #   retry
-  # end
-
+  # array of searched products
   items = results["items"]
 
   # displays results
