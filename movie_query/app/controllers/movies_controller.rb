@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
       break if movie == ""
 
       # replace spaces with %20
-      movie.gsub!(' ', "+") if movie.include?(' ')
+      movie.gsub!(" ", "+") if movie.include?(" ")
 
       # adds movie title to end of QUERY constent and stores raw json
       uri = URI("#{query_url}?apikey=#{api_key}&q=#{movie}")
