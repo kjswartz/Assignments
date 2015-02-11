@@ -2,6 +2,7 @@ require 'active_support'
 require 'active_support/all'
 require 'net/HTTP'
 require 'json'
+require 'cgi'
 include ActiveSupport::NumberHelper
 load 'invoice.rb'
 load 'invoiceitem.rb'
@@ -23,10 +24,9 @@ loop do
   begin
     puts "Please enter a product to search for:"
     product_search = $stdin.gets.strip
-    product_search.gsub!(' ', '+') if product_search.include?(' ')
     break if product_search == ""
 
-    url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}")
+    url = URI(QUERY_URL + "?query=#{CGI.escape(product_search)}&format=#{FORMAT}&apiKey=#{API_KEY}")
     raw_json = Net::HTTP.get(url)
 
     # returns movies array containing hash key values of supporting information
@@ -62,10 +62,6 @@ loop do
       invoice_item.category = item["categoryPath"]
     end
   end
-
-  # add code to strip down to last category in category string.
-
-  ##########
 
   print "Quantity: "
     invoice_item.quantity = gets.chomp.to_i
