@@ -3,6 +3,7 @@
 # calls on the net/HTTP and json libraries
 require 'net/HTTP'
 require 'json'
+require 'cgi'
 
 # sets my initial query string
 QUERY_URL = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=2pwuxewequbju5pc2ksqfphx'
@@ -16,13 +17,10 @@ loop do
 
   # breaks loop if nothing is entered
   break if movie.length == 0
-
-  # replace spaces with %20
-  movie.gsub!(' ', '%20') if movie.include?(' ')
   puts"Searching....\n\n"
 
   # adds movie title to end of QUERY constent and stores raw json
-  uri = URI(QUERY_URL + "&q=#{movie}")
+  uri = URI(QUERY_URL + "&q=#{CGI.escape(movie)}")
   raw_json = Net::HTTP.get(uri)
 
   # returns movies array containing hash key values of supporting information
