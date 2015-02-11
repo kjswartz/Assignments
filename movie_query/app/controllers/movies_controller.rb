@@ -13,20 +13,18 @@ class MoviesController < ApplicationController
       # breaks loop if nothing is entered
       break if movie == ""
 
-      # replace spaces with %20
-      movie.gsub!(" ", "+") if movie.include?(" ")
-
       # adds movie title to end of QUERY constent and stores raw json
-      uri = URI("#{query_url}?apikey=#{api_key}&q=#{movie}")
+      uri = URI("#{query_url}?apikey=#{api_key}&q=#{CGI.escape(movie)}")
       raw_json = Net::HTTP.get(uri)
 
       # returns movies array containing hash key values of supporting information
       results = JSON.parse(raw_json)
-      movies = results['movies']
-      # iterates movies array/hash pulling out values for title and synopsis
-      # first_movie = movies.first
+      movies = results["movies"]
       @movie_title = movies.first["title"]
       @movie_synopsis = movies.first["synopsis"]
+      if @movie_synopsis.length < 1
+        @movie_synopsis = "There was no synopsis listed in the first movie returned."
+      end
 
       # buffer. Lets user search another title.
       puts "\n"
