@@ -6,28 +6,9 @@ include ActiveSupport::NumberHelper
 load 'invoice.rb'
 load 'invoiceitem.rb'
 
-# QUERY_URL = 'http://api.walmartlabs.com/v1/search'
-# API_KEY = 'jgdvys8h2m46rp46czczk3qq'
-# FORMAT = 'json'
-
-# puts "Please enter a product to search for:"
-# product_search = $stdin.gets.strip
-
-# adds movie title to end of QUERY constent and stores raw json
-# url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=relevance")
-# raw_json = Net::HTTP.get(url)
-
-# # returns movies array containing hash key values of supporting information
-# results = JSON.parse(raw_json)
-# items = results.["items"]
-#
-# # display item results
-# items.each do |item|
-#   puts "#{item["itemID"]} | #{item["name"]} | #{item["salePrice"]}"
-# end
-
-
-
+QUERY_URL = 'http://api.walmartlabs.com/v1/search'
+API_KEY = 'jgdvys8h2m46rp46czczk3qq'
+FORMAT = 'json'
 
 # creates new invoice
 invoice = Invoice.new
@@ -36,46 +17,47 @@ item_count = 0
 
 # loop to collect invoice items
 loop do
-
   puts 'Hit ENTER to exit, or input an item.'
 
   puts "Please enter a product to search for:"
-    product_search = $stdin.gets.strip
-    break if product_search == ""
-    invoice_item = InvoiceItem.new(product_search)
+  product_search = $stdin.gets.strip
+  break if product_search == ""
+  invoice_item = InvoiceItem.new
 
-    invoice_item.items.each do |item|
-      puts "#{item["itemId"]} | #{item["name"]} | #{item["salePrice"]}"
+  url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=relevance")
+  raw_json = Net::HTTP.get(url)
+
+  # returns movies array containing hash key values of supporting information
+  results = JSON.parse(raw_json)
+  items = results["items"]
+
+  # displays results
+  items.each do |item|
+    puts "#{item["itemId"]} | #{item["name"]} | #{item["salePrice"]}"
+  end
+
+  #gets product ID user wants to add to invoice
+  print 'Enter a product ID to add item to invoice: '
+  invoice_item.id = gets.chomp
+  break if invoice_item.id == ""
+
+  # items is an array of hashes. Need to identify which hash to pull from within.
+  items.each do |item|
+    # need to set invoice_item.id to FIXNUM class for matching
+    if item["itemId"] == invoice_item.id.to_i
+      # set my class instance variables
+      invoice_item.product_name = item["name"]
+      invoice_item.sale_price = item["salePrice"]
     end
+  end
 
+  print "Quantity: "
+    invoice_item.quantity = gets.chomp.to_i
+  print "Tax rate: "
+    invoice_item.tax = gets.chomp.to_f
 
-
-
-
-
-
-
-
-
-
-
-
-  # print "Product name: "
-  #   invoice_item.product_name = gets.chomp
-  #
-  #
-  # print "Unit price: "
-  #   invoice_item.sale_price = gets.chomp.to_f
-  # print "Quantity: "
-  #   invoice_item.quantity = gets.chomp.to_i
-  # print "Tax rate: "
-  #   invoice_item.tax = gets.chomp.to_f
-  # #creates tracking id number
-  # item_count += 1
-  # invoice_item.id = item_count
-  #
-  # # stores hashed inovice item into invoice array
-  # invoice.items << invoice_item
+  # stores hashed inovice item into invoice array
+  invoice.items << invoice_item
 end
 
 puts "\n"
