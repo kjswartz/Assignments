@@ -21,6 +21,7 @@ loop do
 
   puts "Please enter a product to search for:"
   product_search = $stdin.gets.strip
+  product_search.gsub!(' ', '+') if product_search.include?(' ')
   break if product_search == ""
   invoice_item = InvoiceItem.new
 
