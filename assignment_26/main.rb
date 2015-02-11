@@ -63,6 +63,13 @@ loop do
     end
   end
 
+  # add code to strip down to last category in category string.
+
+
+
+
+  ##########
+  
   print "Quantity: "
     invoice_item.quantity = gets.chomp.to_i
   print "Tax rate: "
