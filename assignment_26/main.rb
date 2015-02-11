@@ -65,11 +65,8 @@ loop do
 
   # add code to strip down to last category in category string.
 
-
-
-
   ##########
-  
+
   print "Quantity: "
     invoice_item.quantity = gets.chomp.to_i
   print "Tax rate: "
@@ -87,7 +84,7 @@ puts "\n"
 # output each item
 invoice.total_items.each do |item|
   puts "Invoice Item ID: #{item.id}"
-  puts item.category
+  puts "Category: #{item.category.split('/')[-1]}"
   puts "Product: #{item.product_name} | Unit Cost: #{item.sale_price} | Quantity: #{item.quantity} | Tax rate: #{item.tax}"
   puts "\n"
 end
