@@ -19,25 +19,34 @@ item_count = 0
 loop do
   puts 'Hit ENTER to exit, or input an item.'
 
-  puts "Please enter a product to search for:"
-  product_search = $stdin.gets.strip
-  product_search.gsub!(' ', '+') if product_search.include?(' ')
-  break if product_search == ""
-  invoice_item = InvoiceItem.new
+  # error handling for nil no results returned.
+  begin
+    puts "Please enter a product to search for:"
+    product_search = $stdin.gets.strip
+    product_search.gsub!(' ', '+') if product_search.include?(' ')
+    break if product_search == ""
 
-  url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=price")
-  raw_json = Net::HTTP.get(url)
-  # returns movies array containing hash key values of supporting information
-  results = JSON.parse(raw_json)
+    url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=price&numItems=10")
+    raw_json = Net::HTTP.get(url)
 
-  # array of searched products
-  items = results["items"]
+    # returns movies array containing hash key values of supporting information
+    results = JSON.parse(raw_json)
 
-  # displays results
-  items.each do |item|
-    puts "#{item["itemId"]} | #{item["name"]} | #{item["salePrice"]}"
+    # array of searched products
+    items = results["items"]
+
+    # displays results
+    items.each do |item|
+      puts "#{item["itemId"]} | #{item["name"]} | #{item["salePrice"]}"
+    end
+  # if no method error occurs because .each is being called on a nil variable
+  rescue
+    puts "You're search return 0 results"
+    # goes back to begin
+    retry
   end
 
+  invoice_item = InvoiceItem.new
   #gets product ID user wants to add to invoice
   print 'Enter a product ID to add item to invoice: '
   invoice_item.id = gets.chomp
