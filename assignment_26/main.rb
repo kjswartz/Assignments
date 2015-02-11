@@ -59,6 +59,7 @@ loop do
       # set my class instance variables
       invoice_item.product_name = item["name"]
       invoice_item.sale_price = item["salePrice"]
+      invoice_item.category = item["categoryPath"]
     end
   end
 
@@ -79,6 +80,7 @@ puts "\n"
 # output each item
 invoice.total_items.each do |item|
   puts "Invoice Item ID: #{item.id}"
+  puts item.category
   puts "Product: #{item.product_name} | Unit Cost: #{item.sale_price} | Quantity: #{item.quantity} | Tax rate: #{item.tax}"
   puts "\n"
 end
