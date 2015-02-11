@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     query_url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json"
     api_key = "2pwuxewequbju5pc2ksqfphx"
     # adds movie title to end of QUERY constent and stores raw json
-    uri = URI("#{query_url}?apikey=#{api_key}&q=#{CGI.escape(@title)}")
+    uri = URI("#{query_url}?apikey=#{api_key}&q=#{@title}")
     raw_json = Net::HTTP.get(uri)
 
     # returns movies array containing hash key values of supporting information
