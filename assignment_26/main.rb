@@ -26,7 +26,7 @@ loop do
     product_search.gsub!(' ', '+') if product_search.include?(' ')
     break if product_search == ""
 
-    url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}&sort=price&numItems=10")
+    url = URI(QUERY_URL + "?query=#{product_search}&format=#{FORMAT}&apiKey=#{API_KEY}")
     raw_json = Net::HTTP.get(url)
 
     # returns movies array containing hash key values of supporting information
