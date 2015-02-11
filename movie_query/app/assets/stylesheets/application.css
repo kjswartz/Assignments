@@ -17,7 +17,5 @@
     font-size: 70px;
     text-align: center;
     }
- h2 {
-   padding: 0px 0px 0px 50px;
-   }
- p {padding: 10px 0px 0px 75px;}
+ h2 {padding: 0px 0px 0px 50px;}
+ p {padding: 10px 100px 0px 75px;}
