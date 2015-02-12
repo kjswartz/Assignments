@@ -5,32 +5,33 @@ load 'post.rb'
 loop do
   print 'Would you like to create a blog (y/n): '
   blog_response = gets.chomp.downcase
-  break if blog_response == "n"
-
-  # print  'Please name your blog: '
-  # blog_name = gets.chomp
-  blog = Blog.new
+  break if blog_response.empty? || blog_response == "n"
+  print 'please enter a blog name: '
+  name = gets.chomp
   print 'Please enter a user_name: '
-  blog.user_name = gets.chomp
+  user_name = gets.chomp
+  blog = Blog.new(name, user_name)
 
     #post loop
     loop do
       print 'Would you like to create a post (y/n): '
       post_response = gets.chomp.downcase
-      break if post_response == "n"
-      post = Post.new
+      break if post_response.empty? || post_response == "n"
+      print 'Please enter a title for your post: '
+      name = gets.chomp
+      post = Post.new(name)
       puts "Please enter your blog post: "
-      blog_body = gets.chomp
-      post.body = blog_body
-
+      post.body = gets.chomp
       # stores post into blog posts array
       blog.posts << post
   end
 
   # we're within blog loop now. displaying all posts
   puts "\n"
-  puts blog.name
+  puts "User: #{blog.user_name}"
+  puts "Blog: #{blog.name}"
   blog.posts.each do |post|
+   puts "\n"
    puts "Post Title: #{post.name}"
    puts "Post Summary: #{post.summary}"
    puts "Post: #{post.body}"

@@ -3,13 +3,9 @@ class Post
   require 'active_support/all'
   attr_accessor :name, :summary, :body, :published_date, :word_count
 
-  def initialize
+  def initialize(name)
     @published_date = Date.current
-    @name = ''
-    while @name.length < 1
-      print 'Please enter a title for your post: '
-      @name = gets.chomp
-    end
+    @name = name
   end
 
   def word_count

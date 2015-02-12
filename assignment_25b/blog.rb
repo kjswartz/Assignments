@@ -1,13 +1,10 @@
 class Blog
 attr_accessor :name, :user_name, :posts
 
-  def initialize
+  def initialize(name, user_name)
     @posts = []
-    @name = ''
-    while @name.length < 1
-      print 'please enter a blog name: '
-      @name = gets.chomp
-    end
+    @name = name
+    @user_name = user_name
   end
 
 end
