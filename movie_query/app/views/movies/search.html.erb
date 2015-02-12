@@ -1,8 +1,46 @@
-<h1>Movies Search</h1>
+<h1>Movie Search <small><%= @movie_title %></small></h1>
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <%= image_tag @movie_poster_original, class: "img-responsive"%>
+  </div>
+
+  <div class="col-md-8">
+
+    <div class="row">
+      <div class="col-md-8">
+        Audience Score: <%= @movie_rating_a_score %> (<%= @movie_rating_audience %>)
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        Critics Score: <%= @movie_rating_c_score %> (<%= @movie_rating_critics %>)
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <%= @movie_synopsis.split(/(?<=\.)\s/)[0] %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-9 col-md-offset-1">
+    Synopsis: <%= @movie_synopsis %>
+  </div>
+</div>
 
 
 
-<h2><%= @movie_title %></h2>
+
+
+
+
+
+<!--
 <p><%= @movie_synopsis %></p>
 <p><%= @movie_year %></p>
 <p><%= @movie_mpaa_rating %></p>
@@ -14,4 +52,5 @@
 <p><%= @movie_release_theater %></p>
 <p><%= @movie_release_dvd  %></p>
 <p><%= image_tag @movie_poster_thumb  %></p>
-<p><%= image_tag @movie_poster_original %></p>
+<p></p>
+-->

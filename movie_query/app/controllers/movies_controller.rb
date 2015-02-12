@@ -36,6 +36,7 @@ class MoviesController < ApplicationController
       @movie_poster_original = @movie_poster_thumb.gsub(/tmb.jpg/, 'ori.jpg')
 
       # need to iterate over abridged_cast and
+
     rescue
       @movie_title = 'No such movie.'
     end
