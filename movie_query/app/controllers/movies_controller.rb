@@ -11,10 +11,14 @@ class MoviesController < ApplicationController
     # returns movies array containing hash key values of supporting information
     results = JSON.parse(raw_json)
     movies = results["movies"]
-    @movie_title = movies.first["title"]
-    @movie_synopsis = movies.first["synopsis"]
-    if @movie_synopsis.length < 1
-      @movie_synopsis = "There was no synopsis listed in the first movie returned."
+    begin
+      @movie_title = movies.first["title"]
+      @movie_synopsis = movies.first["synopsis"]
+      if @movie_synopsis.length < 1
+        @movie_synopsis = "There was no synopsis listed in the first movie returned."
+      end
+    rescue
+      @movie_title = "No such movie."
     end
   end
 end
