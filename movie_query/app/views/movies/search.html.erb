@@ -1,6 +1,6 @@
 <div class="jumbotron">
-  <h1 class="font"><%= @movie_title.upcase %> <small><i><%= @movie_year %></i></small></h1>
-  <p class="font"><i><%= @movie_synopsis.split(/(?<=\.)\s/)[0] %></i></p>
+  <h1><%= @movie_title.upcase %> <small><i>(<%= link_to @movie_mpaa_rating, "http://www.mpaa.org/wp-content/uploads/2013/11/film_ratings1.jpg" %>)</i></small></h1>
+  <p class="font"><i><%= truncate(@movie_synopsis, length: 225, separator: ".") %></i></p>
 </div>
 
 <div class="row">
@@ -9,17 +9,23 @@
   </div>
 
   <div class="col-md-7">
-    <p>Audience Score: <%= @movie_rating_a_score %> (<%= @movie_rating_audience %>)</p>
-    <p>Critics Score: <%= @movie_rating_c_score %> (<%= @movie_rating_critics %>)</p>
-    <p>Rated: <%= @movie_mpaa_rating %></p>
-    <p>Runtime: <%= @movie_runtime %></p>
-    <p>Theatical Release: <%= @movie_release_theater %></p>
-    <p>Released on DVD: <%= @movie_release_dvd  %></p>
+    <p><strong>Audience Score:</strong> <%= @movie_rating_a_score %> (<%= @movie_rating_audience %>)</p>
+    <p><strong>Critics Score:</strong> <%= @movie_rating_c_score %> (<%= @movie_rating_critics %>)</p>
+    <p><strong>Runtime:</strong> <%= @movie_runtime %> minutes</p>
+    <p><strong>Theatical Release:</strong> <%= @movie_release_theater.strftime('%A %B %d, %Y') %></p>
+    <p><strong>DVD Release:</strong> <%= @movie_release_dvd.strftime('%A %B %d, %Y') %></p>
+    <h4 class="title"><i>Cast</i></h4>
+
+      <% @movie['abridged_cast'].each do |actor| %>
+        <p><span class="glyphicon glyphicon-user"></span> <%= actor['name'] %></p>
+        <p style="text-indent:10px"><span class="glyphicon glyphicon-film"></span> <%= actor['characters'][0] %></p>
+      <% end %>
+
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-10 col-md-offset-1" style="text-align:justify;padding-top:10px;padding-bottom:10px;">
-    Synopsis: <%= @movie_synopsis %>
+  <div class="col-md-10 col-md-offset-1 syn">
+    <strong class="title"><i>Synopsis:</i></strong> <%= @movie_synopsis %>
   </div>
 </div>
