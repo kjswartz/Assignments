@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
       # set variables
       @movie_title = movie['title']
       @movie_synopsis = movie['synopsis']
-        @movie_synopsis = 'There was no synopsis.' if @movie_synopsis.length < 1
+        @movie_synopsis = 'There are no words to describe this movie.' if @movie_synopsis.length < 1
       @movie_year = movie['year']
 
       @movie_mpaa_rating = movie['mpaa_rating']
