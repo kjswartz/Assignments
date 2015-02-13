@@ -13,6 +13,7 @@ body {
 .container {
   background-color: white;
   background-size: cover;
+  opacity: 0.9;
   min-height: 800px;
   max-width: 1000px;
   }
@@ -20,3 +21,17 @@ body {
 .font {
   font-family: 'Arvo', serif;
   }
+
+.syn {
+  font-family: 'Arvo', serif;
+  text-align: justify;
+  padding-top:10px;
+  padding-bottom:15px;
+}
+
+.title{
+  text-decoration: underline;
+}
+.indent{
+  text-indent: 25px;
+}
