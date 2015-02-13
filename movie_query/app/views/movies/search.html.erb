@@ -1,6 +1,6 @@
 <div class="jumbotron">
-  <h1>Movie Search <small class="text-primary"><i><%= @movie_title %></i></small></h1>
-  <p><i> <%= @movie_synopsis.split(/(?<=\.)\s/)[0] %> </i></p>
+  <h1 class="font"><%= @movie_title.upcase %> <small><i><%= @movie_year %></i></small></h1>
+  <p class="font"><i><%= @movie_synopsis.split(/(?<=\.)\s/)[0] %></i></p>
 </div>
 
 <div class="row">
@@ -9,57 +9,17 @@
   </div>
 
   <div class="col-md-7">
-
-    <div class="row">
-      <div class="col-md-7">
-        Audience Score: <%= @movie_rating_a_score %> (<%= @movie_rating_audience %>)
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-7">
-        Critics Score: <%= @movie_rating_c_score %> (<%= @movie_rating_critics %>)
-      </div>
-    </div>
-
+    <p>Audience Score: <%= @movie_rating_a_score %> (<%= @movie_rating_audience %>)</p>
+    <p>Critics Score: <%= @movie_rating_c_score %> (<%= @movie_rating_critics %>)</p>
+    <p>Rated: <%= @movie_mpaa_rating %></p>
+    <p>Runtime: <%= @movie_runtime %></p>
+    <p>Theatical Release: <%= @movie_release_theater %></p>
+    <p>Released on DVD: <%= @movie_release_dvd  %></p>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-10 col-md-offset-1" style="text-align:justify;">
+  <div class="col-md-10 col-md-offset-1" style="text-align:justify;padding-top:10px;padding-bottom:10px;">
     Synopsis: <%= @movie_synopsis %>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
-    <p> <%= @movie_synopsis %> </p>
   </div>
 </div>
-
-
-
-
-
-
-
-
-<!--
-<p><%= @movie_synopsis %></p>
-<p><%= @movie_year %></p>
-<p><%= @movie_mpaa_rating %></p>
-<p><%= @movie_runtime %></p>
-<p><%= @movie_rating_audience %></p>
-<p><%= @movie_rating_a_score %></p>
-<p><%= @movie_rating_critics %></p>
-<p><%= @movie_rating_c_score %></p>
-<p><%= @movie_release_theater %></p>
-<p><%= @movie_release_dvd  %></p>
-<p><%= image_tag @movie_poster_thumb  %></p>
-<p></p>
--->
