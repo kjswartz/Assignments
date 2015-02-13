@@ -1,35 +1,44 @@
-<h1>Movie Search <small><%= @movie_title %></small></h1>
+<div class="jumbotron">
+  <h1>Movie Search <small class="text-primary"><i><%= @movie_title %></i></small></h1>
+  <p><i> <%= @movie_synopsis.split(/(?<=\.)\s/)[0] %> </i></p>
+</div>
 
 <div class="row">
-  <div class="col-md-3 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1">
     <%= image_tag @movie_poster_original, class: "img-responsive"%>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-7">
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-7">
         Audience Score: <%= @movie_rating_a_score %> (<%= @movie_rating_audience %>)
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-7">
         Critics Score: <%= @movie_rating_c_score %> (<%= @movie_rating_critics %>)
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-8">
-        <%= @movie_synopsis.split(/(?<=\.)\s/)[0] %>
-      </div>
-    </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-9 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1" style="text-align:justify;">
     Synopsis: <%= @movie_synopsis %>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
+    <p> <%= @movie_synopsis %> </p>
   </div>
 </div>
 
