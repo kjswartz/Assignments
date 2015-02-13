@@ -11,27 +11,27 @@ class MoviesController < ApplicationController
     # returns movies array containing hash key values of supporting information
     results = JSON.parse(raw_json)['movies']
     # sets first hash result to movie
-    movie = results.first
+    @movie = results.first
     begin
       # set variables
-      @movie_title = movie['title']
-      @movie_synopsis = movie['synopsis']
+      @movie_title = @movie['title']
+      @movie_synopsis = @movie['synopsis']
         @movie_synopsis = 'There are no words to describe this movie.' if @movie_synopsis.length < 1
-      @movie_year = movie['year']
+      @movie_year = @movie['year']
 
-      @movie_mpaa_rating = movie['mpaa_rating']
+      @movie_mpaa_rating = @movie['mpaa_rating']
 
-      @movie_runtime = movie['runtime']
+      @movie_runtime = @movie['runtime']
 
-      @movie_rating_audience = movie['ratings']['audience_rating']
-      @movie_rating_a_score = movie['ratings']['audience_score']
-      @movie_rating_critics =  movie['ratings']['critics_rating']
-      @movie_rating_c_score = movie['ratings']['critics_score']
+      @movie_rating_audience = @movie['ratings']['audience_rating']
+      @movie_rating_a_score = @movie['ratings']['audience_score']
+      @movie_rating_critics =  @movie['ratings']['critics_rating']
+      @movie_rating_c_score = @movie['ratings']['critics_score']
 
-      @movie_release_theater = movie['release_dates']['theater']
-      @movie_release_dvd = movie['release_dates']['dvd']
+      @movie_release_theater = Date.parse(@movie['release_dates']['theater'])
+      @movie_release_dvd = Date.parse(@movie['release_dates']['dvd'])
 
-      @movie_poster_thumb = movie['posters']['thumbnail']
+      @movie_poster_thumb = @movie['posters']['thumbnail']
       # image sizes = det / ori / pro / tmb
       @movie_poster_original = @movie_poster_thumb.gsub(/tmb.jpg/, 'ori.jpg')
 
