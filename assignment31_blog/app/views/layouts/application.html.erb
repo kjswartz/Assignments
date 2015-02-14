@@ -5,33 +5,50 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic' rel='stylesheet' type='text/css'>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 </head>
-<body>
-<header>
-  <div class="container">
-    <div class="page-header">
-      <ul class="nav nav-pills pull-right">
-        <li>
-          <%= link_to "Home", root_url %>
-        </li>
-        <li>
-          <%= link_to "About", about_url %>
-        </li>
-      </ul>
-      <h1><%= link_to 'Kyle Swartz', root_url %><small> // A Swizzle Sticks Creation</small></h1>
-    </div>
-</header>
+<body class="font">
 
-    <div class="row back_img">
-      <div class="col-md-6 col-md-offset-3">
+  <div class="fixed">
+    <div class="container">
+      <div  class="row">
+        <div class="col-md-12">
+          <div class="page-header">
+            <ul class="nav nav-pills pull-right">
+              <li>
+                <%= link_to "Home", root_url %>
+              </li>
+              <li>
+                <%= link_to "About", about_url %>
+              </li>
+            </ul>
+            <h1><%= link_to 'Kyle Swartz', root_url %><small> // A Swizzle Sticks Creation</small></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <a href= "/about" ><img src="http://i.imgur.com/2swaVz5.jpg" width="300" height="300"/></a>
+      <div class="left_content">
+        <p>GitHub: <%= link_to 'kjswartz', "https://github.com/kjswartz" %></p>
+        <p>Twitter: <%= link_to 'kjswartz04', "https://twitter.com/kjswartz04" %></p>
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="right_content">
         <%= yield %>
       </div>
     </div>
+  </div>
 
 </body>
 </html>

@@ -1,6 +1,15 @@
-<h1>Home</h1>
+
+
+<h1>This is Your Home</h1>
 <p>A blog of blogs</p>
-<%= link_to 'About Me', about_url %> |
-<%= link_to 'Post 1', post_1_url %> |
-<%= link_to 'Post 2', post_2_url %> |
-<%= link_to 'Post 3', post_3_url %>
+
+
+
+<h3><%= link_to @title_1, post_1_url %></h3>
+<p><%= truncate(@post_1, length: 250) %></p>
+
+<h3><%= link_to @title_2, post_2_url %></h3>
+<p><%= truncate(@post_2, length: 250) %></p>
+
+<h3><%= link_to @title_3, post_3_url %></h3>
+<p><%= truncate(@post_3, length: 250) %></p>

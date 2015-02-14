@@ -14,11 +14,59 @@
  *= require_self
  */
 
-.back_img {
-    background: url('http://i.imgur.com/GqnuHbE.png');
+body {
+    background: url('http://i.imgur.com/1Qgnlfn.jpg');
     background-size: cover;
-    min-height: 700px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;
     }
+
+.fixed {
+  background: url('http://i.imgur.com/1Qgnlfn.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  position:fixed;
+  top:0px;
+  margin:auto;
+  z-index:100000;
+  width:100%;
+}
+
+.right_content {
+  margin-top: 120px;
+  min-height: 700px;
+  padding: 10px 30px 10px 30px;
+  background: -webkit-radial-gradient(#F3D194, #4A6989); /* For Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#F3D194, #4A6989); /* For Opera 11.1 to 12.0 */
+  background: -moz-radial-gradient(#F3D194, #4A6989); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#F3D194, #4A6989); /* Standard syntax */
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+.left_content {
+  margin-top: 410px;
+  width: 300px;
+  position:fixed;
+  background: -webkit-radial-gradient(#F3D194, #4A6989); /* For Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#F3D194, #4A6989); /* For Opera 11.1 to 12.0 */
+  background: -moz-radial-gradient(#F3D194, #4A6989); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#F3D194, #4A6989); /* Standard syntax */
+  opacity: 0.85;
+  border-radius: 0px 0px 20px 20px;
+  padding: 10px 30px 10px 10px;
+}
+
+img {
+  margin-top: 120px;
+  position:fixed;
+  border: 7px solid white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.font {
+  font-family: 'Arvo', serif;
+  }
