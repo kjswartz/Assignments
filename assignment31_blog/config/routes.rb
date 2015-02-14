@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'welcome/index'
-
   root 'posts#index'
-  get 'posts/post_1'
-  get 'posts/post_2'
-  get 'posts/post_3'
+  get 'about' => 'welcome#index'
+  get 'post_1' => 'posts#post_1'
+  get 'post_2' => 'posts#post_2'
+  get 'post_3' => 'posts#post_3'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
