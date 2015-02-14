@@ -25,19 +25,20 @@ loop do
       print 'Would you like to create a post (y/n): '
       post_response = gets.chomp.downcase
       break if post_response.empty? || post_response == "n"
+
       # loops until user enters a post title
       name = ''
       while name.empty?
         print 'Please enter a title for your post: '
         name = gets.chomp
       end
-      post = Post.new(name)
       # loops until user enters text
       post_body = ''
       while post_body.empty?
         puts "Please enter your blog post: "
         post_body = gets.chomp
       end
+      post = Post.new(name)
       post.body = post_body
       # stores post into blog posts array
       blog.posts << post
