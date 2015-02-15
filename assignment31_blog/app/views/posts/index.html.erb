@@ -1,15 +1,26 @@
 
 
-<h1>This is Your Home</h1>
-<p>A blog of blogs</p>
+<h1>Home Page Goodness</h1>
+<p><i>Whats my name...</i></p>
 
 
 
 <h3><%= link_to @title_1, post_1_url %></h3>
+<p>Word Count: <%= @post_1.split.length * 4 %></p>
 <p><%= truncate(@post_1, length: 250) %></p>
 
 <h3><%= link_to @title_2, post_2_url %></h3>
+<p>Word Count: <%= @post_2.split.length * 4 %></p>
 <p><%= truncate(@post_2, length: 250) %></p>
 
 <h3><%= link_to @title_3, post_3_url %></h3>
+<p>Word Count: <%= @post_3.split.length * 4 %></p>
 <p><%= truncate(@post_3, length: 250) %></p>
+
+<h3><%= link_to @title_4, post_4_url %></h3>
+<p>Word Count: <%= @post_4.split.length * 4 %></p>
+<p><%= truncate(@post_4, length: 250) %></p>
+
+<h3><%= link_to @title_5, post_5_url %></h3>
+<p>Word Count: <%= @post_5.split.length * 4 %></p>
+<p><%= truncate(@post_5, length: 250) %></p>

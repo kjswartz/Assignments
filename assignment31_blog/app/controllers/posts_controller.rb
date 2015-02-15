@@ -3,20 +3,77 @@ class PostsController < ApplicationController
     post_1
     post_2
     post_3
+    post_4
+    post_5
   end
 
   def post_1
-  @title_1 = "A New Beginning"
-  @post_1 = "I joined the Air Force when I was 18, leaving home for the first time in search of new adventures and challenges. I was tired of sitting in a classroom all day and was looking for something different. I definitely got that when I first stepped off the bus at Lackland Air Force Base in San Antonio, Texas, lol. I enjoyed how the military broke you down and then rebuilt you. Sounds a lot worse than it is. They throw a lot of things at you all at once, overwhelming you and making you think there is no way you can accomplish everything. The truth of it is that you cannot get everything accomplished, and understanding that is the first step to success. That has always stuck with me. Being able to understand that, and to prioritize tasks is the foundation on which I was rebuilt. It is also important to remember that even though you feel alone, there are literally hundreds of people around you in the same boat. Being able to lean on one another is paramount when surrounded by such high levels of stress and fear. Fear that you are going to wash out, fear that you will not be able to make your bed properly, or arrange your wall locker to standards. If I could talk to my pre Basic Training self I’d tell him to just breath, and being willing to accept failures. No one can do everything they ask of you right the first time, and even if you did, trust me when I say they will find something wrong with it lol. You need to be able bounce back from failures. Everyone fails, but it is how we respond that is crucial. Operating in war tie conditions are extremely erratic, no matter what level of involvement. Every decision carries with it any number of untold consequences, some that even involve people’s lives. There may come a time when a decision you make endangers other soldiers lives, and when that happens every follow on decision becomes more and more dangerous. Being able to remain calm is crucial, so as to not let the situation spiral even further out of control. That was the first thing I learned, and it has stuck with me to this day. Sometimes I will fail, I will have setbacks, but it is the lessons I learn and how I bounce back that is crucial. I recently begun class at The Iron Yard in Saint Petersburg, FL, to become a Ruby on Rails Developer, and this was one of the first things they talked about. The ability to accept failure as an inevitability of being a Developer. I knew I made they right decision to leave my job for this program when they mentioned that. I love finding 100 ways to not do something, because once you find that one (at least one) way to solve it, you are filled with a feeling of euphoria. We have just started week 2 and I come in everyday feeling challenged, and I couldn’t be more happy. Stressful yes, but I like to think that I strive under stressful conditions."
+    @title_1 = "Hell yeah, B.."
+    @post_1 = "At first I thought to myself 'Hell yeah, bitch. Now give me a D
+    and shut up so I can go blaze one with my boys.' I don't know. Maybe it was
+    the way he said it, but... it was like he wasn't exactly saying it sucked.
+    He was just asking me honestly, 'Is that all you got?' And for some reason,
+    I thought to myself: 'Yeah, man, I can do better.' So I started from scratch.
+    I made another, then another. And by the end of the semester, by like box
+    number five, I had built this thing. You should have seen it. It was insane.
+    I mean, I built it out of Peruvian walnut with inlaid zebrawood. It was
+    fitted with pegs, no screws, I sanded it for days, until it was smooth as g
+    lass. Then I rubbed all the wood with tung oil so it was rich and dark.
+    It even smelled good. You know, you put nose in it and breathed in, it
+    was... it was perfect."
   end
 
   def post_2
-    @title_2 = "Chugging Along"
-    @post_2 = "We are now into are third week of class and have just started to get into Rails. Great, just as I was starting to pick up Ruby more quickly, a new element is tossed into the mix, lol. Don’t get me wrong, I’m glad we’re starting to tackle Rails, because now we can start creating functional GUI web apps versus old school Terminal prompts. Every now and then someone will ask you what you learned the previous day, and I always have to pause because everything is starting to run together. I am able to recall and build upon all of the concepts being taught, but I can no longer separate what I learned yesterday from what I learned the day before that. So be warned, if you ask me what I learned today, or the day prior, I’m going to tell you everything we’ve covered since day one! In addition to the classroom learning, the tech environment and community are really enjoyable. I’m always meeting new people, and everyone is eager to teach and really friendly. This is an extremely different environment for me, lol. I was previously in the military, and then I worked as a government contractor for three years after that. The majority of the time when you met new people, they wanted to know what you could do for them. If you didn’t provide any value right away, you were typical dismissed and shoved to the side. Other times you would be met with a cold shoulder because you were there to provide value, and individuals in general were largely against change. Mostly because they feared it would inconvenience them, or threaten their job, and everyone was a lot more jaded, lol. However, most of the time when I would go out to train military members, they were a lot more receptive, but that was only after the technology had proven itself over several years of use. I love being surrounded by people who are open to new technologies and concepts. I hated walking into a new office and seeing several out dated processes. Every time I’d ask, “Why are we doing X this way”, and the standard response was, “I don’t know, we’ve always done it this way”. **cue head slamming into brick wall repeatedly** I think the main problem was that the majority of the people were just going through the motions. I was surrounded by people who were just there for a paycheck, and it showed in their work. I was surrounded by people who lacked a passion for the job, and and it was slowly killing me. I’ve always been able to jump in and give 110% to any job I’ve had, and that gets hard to do when very few around you share that same passion. I would say that was a big factor in my decision to leave an established career where I was at a fairly high level for my age, to start all over at the bottom. Its been about five weeks since I left my job and another three in this course, and I do not miss my old job one bit."
+    @title_2 = "Level Headed Mike"
+    @post_2 = "You... are trouble. I'm sorry the kid here doesn't see it,
+    but I sure as hell do. You are a time bomb. Tick, tick, ticking. And I
+      have no intention of being around for the boom. Well... you know how
+      they say, it's been a pleasure? It hasn't. Well, I guess that's it.
+      Parting thoughts of which I have two. First: as I said I'll handle the
+      legacy costs out of my end so you won't have to worry about my guys anymore.
+      Second: the bug. The DEA will do a sweep can't say when, could be any time.
+      But you need to get it out of there sooner rather than later. Alright.
+      Just get the bug, Walter."
   end
 
   def post_3
-    @title_3 = "Post 3"
-    @post_3 = "posting 3"
+    @title_3 = "Better Call Saul"
+    @post_3 = "Hello. Welcome. What a pleasure it is to have you. Just gonna
+    call you Skyler if that's okay. It's a lovely name. It reminds me of the
+    big, beautful sky. Walter always told me how lucky he was, prior to recent
+    unfortunate events. Clearly his taste in women is the same as his taste in
+    lawyers: only the very best with just the right amount of dirty. Walter,
+    I'm your lawyer. Anything you say to me is totally privileged. I'm not in
+    the shakedown racket. I'm a lawyer. Even drug dealers need lawyers, right?
+    Especially drug dealers."
   end
+
+  def post_4
+    @title_4 = "I Said Cheetos..."
+    @post_4 = "Marie, I said Cheetos, not Fritos. I must've said Cheetos like
+    ten times. You need me to write it down for you? Well, I'm just saying,
+    y'know, I said Cheetos. Ch-ch-ch sound. Virtually impossible to confuse
+    Cheetos with Fritos it seems to me. Where are you going?
+    So things are quiet, y'know? Not a lot of crystal on the streets right
+    now. Well, we keep hearing a name. Heisenberg. Lately pretty much every
+    dimebagger we come across. Yeah, I know. Maybe it's a tweaker urban legend.
+    Still, somebody somewhere is cooking that big blue we keep finding.
+    Come here... closer... Asshole."
+  end
+
+  def post_5
+    @title_5 = "The Heisenberg Rant"
+    @post_5 = "It's enough. This is still the best way.
+    You go after him with a gun, you'll never get out of it alive.
+    But with this... you slip it into his food or drink, there shouldn't be
+    any taste or smell... thirty-six hours later... poof. A man his age,
+    working as hard as he does... no one will be surprised. Mike can have his
+    suspicions, but that's all they'll be. Please, one homicidal maniac at a time.
+    Look, I'll give you Jesse Pinkman, OK? Like you said, he's the problem,
+    he's always been the problem and without him, we would... and he's in town,
+    alright? He's not in Virginia or wherever the hell you're looking for him.
+    He's right here in Albuquerque and I can take you to him, I'll take you
+    right to him. What do you say?"
+  end
+
 end

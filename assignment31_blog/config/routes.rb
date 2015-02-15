@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'post_1' => 'posts#post_1'
   get 'post_2' => 'posts#post_2'
   get 'post_3' => 'posts#post_3'
+  get 'post_4' => 'posts#post_4'
+  get 'post_5' => 'posts#post_5'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
