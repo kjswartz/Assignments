@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 
 <body class="font">
@@ -36,11 +38,15 @@
 
   <div  class="row">
     <div class="col-md-3 col-md-offset-1">
-      <a href= "/about" ><img src="http://i.imgur.com/2swaVz5.jpg" class="img-responsive" width="300" height="300"/></a>
+      <%= link_to image_tag("profile.jpg", class: "img"), about_url %>
       <div class="left_content">
-        <p><strong>GitHub:</strong> <%= link_to 'kjswartz', "https://github.com/kjswartz" %></p>
-        <p><strong>Twitter:</strong> <%= link_to 'kjswartz04', "https://twitter.com/kjswartz04" %></p>
-      </div>
+        <p><%= image_tag("GitHub-Mark.png", size: "28x28") %> <%= link_to 'kjswartz', "https://github.com/kjswartz" %></p>
+        <p><%= image_tag("twitter.png", size: "25x25") %> <%= link_to 'kjswartz04', "https://twitter.com/kjswartz04" %></p>
+        <p>
+          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+           <%= mail_to "kyle.swartz.3@gmail.com", "Contact Me", subject: "Hello", body: "Dear Mr. Swartz," %>
+        </p>
+    </div>
     </div>
 
     <div class="col-md-7">

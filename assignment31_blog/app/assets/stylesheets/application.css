@@ -15,7 +15,7 @@
  */
 
 body {
-    background: url('http://i.imgur.com/028BzOu.jpg');
+    background-image: url(pebble.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ body {
     }
 
 .fixed {
-  background: url('http://i.imgur.com/028BzOu.jpg');
+  background: url(pebble.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
@@ -45,7 +45,7 @@ body {
 }
 
 .left_content {
-  margin-top: 410px;
+  margin-top: 467px;
   width: 300px;
   position:fixed;
   background: -webkit-radial-gradient(#5DA3A6, #4A6989); /* For Safari 5.1 to 6.0 */
@@ -57,10 +57,9 @@ body {
   padding: 10px 30px 10px 10px;
 }
 
-img {
+.img {
   margin-top: 120px;
   position:fixed;
-  border: 7px solid white;
   border-radius: 20px 20px 0px 0px;
 }
 
@@ -77,3 +76,7 @@ a:link {color: #111057;}
 a:visited {color: #111057;}
 a:hover {color: #111057;}
 a:active {color: #111057;}
+
+.popover {
+  min-width: 590px;
+}

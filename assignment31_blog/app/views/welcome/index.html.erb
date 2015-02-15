@@ -1,6 +1,7 @@
 <h1>About Me</h1>
 <p>
-  I am currently attending a 12 week intensive coding called The Iron Yard,
+  I am currently attending a 12 week intensive coding called
+  <a id="TIY">The Iron Yard,</a>
   in Saint Petersburg, FL. It's funny, I really don't like to talk about myself
   a lot because sometimes I feel it comes off as bragging. Granted, that may be
   my fault due to the tone I use, and I've been told I can be a bit of a smart
@@ -17,11 +18,12 @@
 <p>
   There is definitely something to be said about the simpler life. I often feel
   like people, including myself, have lost sight on the purpose of life. One of
-  my all time favorite quotes is from the movie Fight Club, ‘Advertising has us
-  chasing cars and clothes, working jobs we hate so we can buy shit we don't need.
-  We're the middle children of history, man. No purpose or place’. That was me
-  just a couple of months ago, working in a job I didn’t much care for, just so
-  I could rent an apartment and put gas in a car to drive myself to work.
+  my all time favorite quotes is from the movie Fight Club,
+
+  <a id="fightclub">'Advertising has us chasing cars and clothes, working jobs we hate so we can buy shit we don't need.'</a>
+
+  That was me just a couple of months ago, working in a job I didn’t much care for,
+  just so I could rent an apartment and put gas in a car to drive myself to work.
   People have always told me, ‘your job is just so you can pay for the things
   you want to do and not who you are’. Given the current size of society, this
   has to be true for some people. Society needs people willing to do the ‘dirty
@@ -41,8 +43,10 @@
   their facilities no problem. A total combined time of just over two years
   living/woking in the middle east (Iraq, Qatar, and Afghanistan), have given
   me the ability to adapt to less than desirable bathroom facilities, lol.
-  Ever since I a kid watching Step by Step, and I was introduced to the character
-  who lived in his van in the driveway, I’ve wanted that lifestyle. I enjoy
+  When I was a kid watching Step by Step and I was introduced to a character
+  who lived in his
+  <a id="stepbystep">van in the driveway,</a>
+  I’ve wanted that lifestyle. I enjoy
   reading articles and stories of individuals who don’t have homes, but instead
   live and work out of hotels all around the world. They run their businesses,
   or work remotely from wherever there is a wifi connection. A couple of sets
@@ -59,5 +63,24 @@
   nomadic with the skills I’m acquiring from The Iron Yard.
 </p>
 
+<script type="text/javascript">
+  $('#TIY').popover({
+      placement : 'bottom',
+      html: 'true',
+      content : '<%= link_to image_tag("TIY.png", size: "560x300"), "http://theironyard.com/locations/tampa-st-petersburg/" %>'
+  });
 
-<%= link_to 'Home', root_url %>
+  $('#fightclub').popover({
+      placement : 'bottom',
+      html: 'true',
+      content : '<iframe id="popOverBox" width="560" height="315" src="https://www.youtube.com/embed/ByqRVviyOiQ" frameborder="0" allowfullscreen></iframe>'
+  });
+
+  $('#stepbystep').popover({
+      placement : 'top',
+      html: 'true',
+      content : '<%= image_tag("van.jpg", size: "540x300") %>'
+  });
+</script>
+
+<%= link_to image_tag("home.png", size: "25x25"), root_url %>
