@@ -15,7 +15,7 @@
  */
 
 body {
-    background: url('http://i.imgur.com/1Qgnlfn.jpg');
+    background: url('http://i.imgur.com/028BzOu.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ body {
     }
 
 .fixed {
-  background: url('http://i.imgur.com/1Qgnlfn.jpg');
+  background: url('http://i.imgur.com/028BzOu.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
@@ -39,11 +39,11 @@ body {
   margin-top: 120px;
   min-height: 700px;
   padding: 10px 30px 10px 30px;
-  background: -webkit-radial-gradient(#F3D194, #4A6989); /* For Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#F3D194, #4A6989); /* For Opera 11.1 to 12.0 */
-  background: -moz-radial-gradient(#F3D194, #4A6989); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#F3D194, #4A6989); /* Standard syntax */
-  opacity: 0.9;
+  background: -webkit-linear-gradient(#5DA3A6, #4A6989); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#5DA3A6, #4A6989); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5DA3A6, #4A6989); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5DA3A6, #4A6989); /* Standard syntax */
+  opacity: 0.95;
   border-radius: 20px;
 }
 
@@ -51,11 +51,11 @@ body {
   margin-top: 410px;
   width: 300px;
   position:fixed;
-  background: -webkit-radial-gradient(#F3D194, #4A6989); /* For Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#F3D194, #4A6989); /* For Opera 11.1 to 12.0 */
-  background: -moz-radial-gradient(#F3D194, #4A6989); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#F3D194, #4A6989); /* Standard syntax */
-  opacity: 0.85;
+  background: -webkit-radial-gradient(#5DA3A6, #4A6989); /* For Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#5DA3A6, #4A6989); /* For Opera 11.1 to 12.0 */
+  background: -moz-radial-gradient(#5DA3A6, #4A6989); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#5DA3A6, #4A6989); /* Standard syntax */
+  opacity: 0.95;
   border-radius: 0px 0px 20px 20px;
   padding: 10px 30px 10px 10px;
 }
@@ -69,4 +69,10 @@ img {
 
 .font {
   font-family: 'Arvo', serif;
+  text-align: justify;
   }
+
+a:link {color: #111057;}
+a:visited {color: #111057;}
+a:hover {color: #111057;}
+a:active {color: #111057;}

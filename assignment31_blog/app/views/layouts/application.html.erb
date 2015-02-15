@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
 </head>
 <body class="font">
 
@@ -27,7 +26,7 @@
                 <%= link_to "About", about_url %>
               </li>
             </ul>
-            <h1><%= link_to 'Kyle Swartz', root_url %><small> // A Swizzle Sticks Creation</small></h1>
+            <h1><a><%= link_to 'Kyle Swartz', root_url %><small> // A Swizzle Sticks Creation</small></a></h1>
           </div>
         </div>
       </div>
@@ -36,7 +35,7 @@
 
   <div  class="row">
     <div class="col-md-3 col-md-offset-1">
-      <a href= "/about" ><img src="http://i.imgur.com/2swaVz5.jpg" width="300" height="300"/></a>
+      <a href= "/about" ><img src="http://i.imgur.com/2swaVz5.jpg" class="img-responsive" width="300" height="300"/></a>
       <div class="left_content">
         <p>GitHub: <%= link_to 'kjswartz', "https://github.com/kjswartz" %></p>
         <p>Twitter: <%= link_to 'kjswartz04', "https://twitter.com/kjswartz04" %></p>
