@@ -11,8 +11,9 @@ class MoviesController < ApplicationController
     # returns movies array containing hash key values of supporting information
     results = JSON.parse(raw_json)['movies']
     # sets first hash result to movie
-    @movie = results.first
     begin
+    @movie = results.first
+
       # set variables
       @movie_title = @movie['title']
       @movie_synopsis = @movie['synopsis']
@@ -36,7 +37,6 @@ class MoviesController < ApplicationController
       @movie_poster_original = @movie_poster_thumb.gsub(/tmb.jpg/, 'ori.jpg')
 
       # need to iterate over abridged_cast and
-
     rescue
       @movie_title = 'No such movie.'
     end
