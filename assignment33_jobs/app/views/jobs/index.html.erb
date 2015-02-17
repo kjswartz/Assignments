@@ -1,8 +1,17 @@
+<div class="page-header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active">
+      <%= link_to 'Create New Job Posting', new_job_path %>
+    </li>
+    <li class="active">
+      <%= link_to "Home", root_path %>
+    </li>
+  </ul>
+  <h1>Job Listings</h1>
+</div>
+
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Jobs</h1>
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Company</th>
@@ -23,9 +32,9 @@
         <td><%= job.company %></td>
         <td><%= job.location %></td>
         <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.duties %></td>
-        <td><%= job.experience %></td>
+        <td><%= truncate(job.description, length:100) %></td>
+        <td><%= truncate(job.duties, length:100) %></td>
+        <td><%= truncate(job.experience, length:100) %></td>
         <td><%= job.education %></td>
         <td><%= job.posted %></td>
         <td><%= link_to 'Show', job %></td>
@@ -36,7 +45,8 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Job', new_job_path %> |
-<%= link_to "Home", root_path %>
+<ul class="nav nav-pills pull-left">
+  <li class="active">
+    <%= link_to 'Create New Job Posting', new_job_path %>
+  </li>
+</ul>

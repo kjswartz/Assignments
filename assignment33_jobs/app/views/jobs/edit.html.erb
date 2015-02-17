@@ -1,6 +1,14 @@
-<h1>Editing Job</h1>
+<div class="page-header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active">
+      <%= link_to 'Back', jobs_path %>
+    </li>
+    <li class="active">
+      <%= link_to "Home", root_path %>
+    </li>
+  </ul>
+  <h1>Editing Job</h1>
+</div>
+
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>

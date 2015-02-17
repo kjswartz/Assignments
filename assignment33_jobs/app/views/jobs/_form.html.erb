@@ -13,37 +13,36 @@
 
   <div class="field">
     <%= f.label :company %><br>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control"%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :duties %><br>
-    <%= f.text_area :duties %>
+    <%= f.text_area :duties, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :experience %><br>
-    <%= f.text_area :experience %>
+    <%= f.text_area :experience, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :education %><br>
-    <%= f.text_area :education %>
+    <%= f.text_area :education, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :posted %><br>
     <%= f.date_select :posted %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
 <% end %>
