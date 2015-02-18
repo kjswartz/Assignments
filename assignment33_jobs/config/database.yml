@@ -1,7 +1,7 @@
 
 development:
   adapter: postgresql
-  database: movie_query_dev
+  database: job_posting_dev
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -10,5 +10,5 @@ development:
 
 test:
   adapter: postgresql
-  database: movie_query_test
+  database: job_posting_test
   host: localhost

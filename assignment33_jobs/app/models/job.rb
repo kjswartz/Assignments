@@ -16,4 +16,7 @@
 #
 
 class Job < ActiveRecord::Base
+  has_many :applicants
+  validates_associated :applicants
+  validates :company, presence: true, length: { minimum: 2 }
 end
