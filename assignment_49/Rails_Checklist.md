@@ -5,6 +5,7 @@
 ## How to Version Control It and Push to GitHub
 - [ ] `cd appname`
 - [ ] `git init`
+- [ ] `modify git ignore file`
 - [ ] `git add .`
 - [ ] `git commit -am ‘First commit'`
 - [ ] goto GitHub and create new repo
@@ -38,12 +39,14 @@ test:
   host: localhost
 ```
 - [ ] `rake db:create`
+- [ ] `rake db:migrate`
 - [ ] Create Procfile in root directory and the following text to the file: _web: bundle exec thin start -p $PORT_
+- [ ] `boot up rails server and test locally`
 
 ## Deploying to Heroku
-- [ ] make sure everything is pushed to GitHub
+- [ ] make sure everything is pushed to GitHub (not necessary but good practice)
 - [ ] `heroku create`
-- [ ] `git push heroku master`
+- [ ] `git push heroku master` (being push from local git NOT GitHub)
 - [ ] `heroku run rake db:migrate`
 - [ ] `heroku restart`
 - [ ] if needed, `heroku run rake db:seed`
