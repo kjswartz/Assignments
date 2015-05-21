@@ -157,75 +157,77 @@ https://gist.github.com/kjswartz/b306539d5436f36cb790
 * Create a private method called `calculateAge`. This should contain the functionality you previously had in the `age` method. The public `age` method should now call this new private `calculateAge` method.
 
 ###Assignment 22
-Read How Do Gems Work?
-Read Understanding Ruby Blocks, Procs and Lambdas
+* Read [How Do Gems Work? ](http://www.justinweiss.com/blog/2014/09/29/how-do-gems-work/?utm_source=rubyweekly&utm_medium=email)
+* Read [Understanding Ruby Blocks, Procs and Lambdas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
+
 
 ###Assignment 23
-Create an InvoiceItem class and an Invoice class (two classes in two separate files)
-The InvoiceItem class should have the following attributes: product_name, sale_price, quantity, tax percentage
-The invoice class should have a getter and setter for an attribute called: items to hold an array of all the InvoiceItems
-Create an instance method in Invoice that will calculate a total of all it's invoice items
-Use reject or select methods in order to remove any InvoiceItem objects that have a zero quantity
-Create an instance method in Invoice to sum up the invoice items and get a total
-Ask the user to enter in the attributes for each invoice item, hitting ENTER on product name when done
-With each invoice item entered, create the object and add it to the collection of invoice items within a single Invoice object.
-Then output each line item.
-Show a sub-total without the tax, then a line item for the tax, then the total.
-Bonus: make the invoice look like a real world invoice in the terminal
+* Create an InvoiceItem class and an Invoice class (two classes in two separate files)
+* The InvoiceItem class should have the following attributes: product_name, sale_price, quantity, tax percentage
+* The invoice class should have a getter and setter for an attribute called: _items_ to hold an array of all the InvoiceItems
+* Create an instance method in Invoice that will calculate a total of all it's invoice items
+* Use reject or select methods in order to remove any InvoiceItem objects that have a zero quantity
+* Create an instance method in Invoice to sum up the invoice items and get a total
+* Ask the user to enter in the attributes for each invoice item, hitting ENTER on product name when done
+* With each invoice item entered, create the object and add it to the collection of invoice items within a single Invoice object.
+* Then output each line item.
+* Show a sub-total without the tax, then a line item for the tax, then the total.
 
 ###Assignment 24
-Take the Employee and Company classes, and create functionality to allow the company to hire and fire an employee.
-Create a Ruby app that will use those classes to do the following:
-prompt the user to enter information for the company.
-prompt the user to enter each employee. It will then "hire" each of them.
-show a list of employees, with ids, then ask the user if they would like to fire an employee by entering that id.
-fire the employee by id and show an updated list with that employee no longer in it.
+* Take the Employee and Company classes, and create functionality to allow the company to hire and fire an employee.
+* Create a Ruby app that will use those classes to do the following:
+- prompt the user to enter information for the company.
+- prompt the user to enter each employee. It will then "hire" each of them.
+- show a list of employees, with ids, then ask the user if they would like to fire an employee by entering that id.
+- fire the employee by id and show an updated list with that employee no longer in it.
 
 ###Assignment 25
-Design and code a Blog and Post class.
-These classes should model a system where a user can create a blog, which will have posts.
-A Blog can have a name, a user_name, and the collection of posts
-A Post can have a name, a summary, the body of the post, the published date, and a word count.
-Since both a blog and a post MUST have a name, override the initializer so that when an object of either class is created, a name must be supplied.
+* Design and code a Blog and Post class.
+* These classes should model a system where a user can create a blog, which will have posts.
+* A Blog can have a name, a user_name, and the collection of posts
+* A Post can have a name, a summary, the body of the post, the published date, and a word count.
+* Since both a blog and a post MUST have a name, override the initializer so that when an object of either class is created, a name must be supplied.
+
 
 ###Assignment 26
-Take what we did in class with the Walmart API, and combine it with what you created in assignment 23
-Prompt the user to search for a product and allow the user to enter the product id (from the search results). For the product indicated, create an InvoiceItem object and add it to your Invoice object
-After the user adds a product to the invoice (using your InvoiceItem class), loop and allow them to search again
-When the user hits ENTER instead of a SEARCH term or a product id, print out the same result as in Assignment 23.
-Bonus to the Bonus: add a category attribute to your InvoiceItem and set it from the Walmart API. Include the category on the output invoice.
+* This is a bonus assignment for those who are caught up on your past homework and are able to finish the HTML/CSS assignment quickly.
+* Take what we did in class with the Walmart API, and combine it with what you created in assignment 23
+* Prompt the user to search for a product and allow the user to enter the product id (from the search results). For the product indicated, create an InvoiceItem object and add it to your Invoice object
+* After the user adds a product to the invoice (using your InvoiceItem class), loop and allow them to search again
+* When the user hits ENTER instead of a SEARCH term or a product id, print out the same result as in Assignment 23.
+* Bonus to the Bonus: add a category attribute to your InvoiceItem and set it from the Walmart API. Include the category on the output invoice.
 
 ###Assignment 27
-Sign up for a codepen account (login with GitHub)
-Create one codepen with HTML and CSS of anything.
+* Sign up for a codepen account (login with GitHub)
+* Create one codepen with HTML and CSS of anything.
 
 ###Assignment 28
-Read Separation of Concerns
-Read MVC
-Refer to HTML Element Reference
-Refer to CSS Reference
-Create a home page with the title of your blog, and your name as the author
-List out at least 3 pretend blog posts with their title, word count and summary. Hyperlinking them to their own HTML Post pages.
-On the individual Post pages, should show a link back to the home page, the blog title, the post title, the body, and the published date.
-You should have four HTML files that all link to each other and one external css.
-Include an image in at least one blog post
-Bonus: Use at least one custom font from Google
-Put these files in an assignment_28 folder and check into github
+* Read [Separation of Concerns](http://en.wikipedia.org/wiki/Separation_of_concerns)
+* Read [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+* Refer to [HTML Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+* Refer to [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+* Create a home page with the title of your blog, and your name as the author
+* List out at least 3 pretend blog posts with their title, word count and summary. Hyperlinking them to their own HTML Post pages.
+* On the individual Post pages, should show a link back to the home page, the blog title, the post title, the body, and the published date.
+* You should have four HTML files that all link to each other and one external css.
+* Include an image in at least one blog post
+* Bonus: Use at least one custom font from Google
+* Put these files in an _assignment_28_ folder and check into github
 
 ###Assignment 29
-Review Ruby Rails guide up to section 5.
-Create a new rails app called movie_query
-This app and it's folder should be inside your assignments app.
-Generate a 'movies' controller with a 'search' action.
-Paste all your Ruby code from the movie query app into your search action
-Note: you don't need to require active_support any more. Try not requiring libraries until you get an error.
-Put the first movie's synopsis in the results into an instance variable
-In your ERB, index.html.erb, use Rails expression display the movie synopsis
+* Review [Ruby Rails guide](http://guides.rubyonrails.org/getting_started.html) up to section 5.
+* Create a new rails app called _movie_query_
+* This app and it's folder should be inside your assignments app.
+* Generate a 'movies' controller with a 'search' action.
+* Paste all your Ruby code from the movie query app into your _search_ action
+* Note: you don't need to require active_support any more. Try not requiring libraries until you get an error.
+* Put the first movie's synopsis in the results into an instance variable
+* In your ERB, _index.html.erb_, use Rails expression display the movie synopsis
 
 ###Assignment 30
-Alter your existing app so you are no longer returning the synopsis in an instance variable, but instead returning the entire first movie result. We will assume for this exercise that the first movie that comes back is the one we want.
-Using all the information returned for the movie, recreate a movie information page like this one on IMBD or this one on Rotten Tomatoes. Note it does not have to have their branding but should nicely layout as much of the movie information as possible. Ex: poster, ratings, synopsis, tomatometer, some cast, running time, etc.
-The goal is to create your own movie information page as though you were creating one for a client's movie app.
+* Alter your existing app so you are no longer returning the synopsis in an instance variable, but instead returning the entire first movie result. We will assume for this exercise that the first movie that comes back is the one we want.
+* Using all the information returned for the movie, recreate a movie information page like this one on [IMBD]() or this one on [Rotten Tomatoes](http://www.rottentomatoes.com/m/kingsman_the_secret_service/). Note it does not have to have their branding but should nicely layout as much of the movie information as possible. Ex: poster, ratings, synopsis, tomatometer, some cast, running time, etc.
+* The goal is to create your own movie information page as though you were creating one for a client's movie app.
 
 ###Assignment 31
 * Review the [UrlHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html)
