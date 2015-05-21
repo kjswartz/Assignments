@@ -165,4 +165,15 @@ After the user adds a product to the invoice (using your InvoiceItem class), loo
 When the user hits ENTER instead of a SEARCH term or a product id, print out the same result as in Assignment 23.
 Bonus to the Bonus: add a category attribute to your InvoiceItem and set it from the Walmart API. Include the category on the output invoice.
 
-
+###Assignment 28
+Read Separation of Concerns
+Read MVC
+Refer to HTML Element Reference
+Refer to CSS Reference
+Create a home page with the title of your blog, and your name as the author
+List out at least 3 pretend blog posts with their title, word count and summary. Hyperlinking them to their own HTML Post pages.
+On the individual Post pages, should show a link back to the home page, the blog title, the post title, the body, and the published date.
+You should have four HTML files that all link to each other and one external css.
+Include an image in at least one blog post
+Bonus: Use at least one custom font from Google
+Put these files in an assignment_28 folder and check into github
